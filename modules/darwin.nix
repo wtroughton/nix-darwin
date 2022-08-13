@@ -96,6 +96,9 @@
   services.nix-daemon.enable = true;
   # nix.package = pkgs.nix;
 
+  # Use Touch ID for sudo authentication
+  security.pam.enableSudoTouchIdAuth = true;
+
   # The user-friendly name for the system
   networking.computerName = "Starlight";
   networking.hostName     = "HAL";

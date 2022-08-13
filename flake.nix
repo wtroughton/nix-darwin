@@ -16,6 +16,7 @@
 
         modules = [
           ./modules/darwin.nix
+          ./modules/pam.nix
 
           home-manager.darwinModules.home-manager {
             home-manager = {
