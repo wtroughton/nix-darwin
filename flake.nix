@@ -11,16 +11,20 @@
 
   outputs = { self, darwin, home-manager, nixpkgs }: {
     darwinConfigurations = {
-      "Winstons-MacBook" = darwin.lib.darwinSystem {
+      "Starlight" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
 
         modules = [
-          ./configuration.nix
+          ./modules/darwin.nix
 
           home-manager.darwinModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.winston = import ./home.nix;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.winston = {
+                imports = [ ./modules/home.nix ];
+              };
+            };
           }
         ];
       };

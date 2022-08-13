@@ -1,31 +1,40 @@
 { config, pkgs, ... }:
 
 {
-  system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
+  system.defaults = {
+    NSGlobalDomain = {
+      AppleFontSmoothing       = 1;
+      AppleInterfaceStyle      = "Dark";
+      AppleKeyboardUIMode      = 3;
+      ApplePressAndHoldEnabled = false;
 
-  system.defaults.NSGlobalDomain.AppleKeyboardUIMode = 3;
-  system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled = false;
-  system.defaults.NSGlobalDomain.InitialKeyRepeat = 12;  # 180ms
-  system.defaults.NSGlobalDomain.KeyRepeat = 2;  # 30ms
+      InitialKeyRepeat = 12;  # 180ms
+      KeyRepeat        = 2;   # 30ms
 
-  system.defaults.NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
-  system.defaults.NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false;
+      NSAutomaticCapitalizationEnabled     = false;
+      NSAutomaticDashSubstitutionEnabled   = false;
+      NSAutomaticPeriodSubstitutionEnabled = false;
+      NSAutomaticQuoteSubstitutionEnabled  = false;
+      NSAutomaticSpellingCorrectionEnabled = false;
+      NSAutomaticWindowAnimationsEnabled   = false;
+    };
 
-  system.defaults.NSGlobalDomain.NSAutomaticWindowAnimationsEnabled = false;
+    dock = {
+      autohide    = true;
+      mru-spaces  = false;
+      showhidden  = true;
+    };
 
-  system.defaults.dock.autohide = true;
-  system.defaults.dock.mru-spaces = false;
-  system.defaults.dock.orientation = "left";
-  system.defaults.dock.showhidden = true;
+    finder = {
+      AppleShowAllExtensions         = true;
+      QuitMenuItem                   = true;
+      FXEnableExtensionChangeWarning = false;
+    };
 
-  system.defaults.finder.AppleShowAllExtensions = true;
-  system.defaults.finder.QuitMenuItem = true;
-  system.defaults.finder.FXEnableExtensionChangeWarning = false;
+    screencapture = { location = "~/Screenshots"; };
 
-  system.defaults.trackpad.Clicking = true;
+    trackpad.Clicking = true;
+  };
 
   time.timeZone = "America/New_York";
 
@@ -88,7 +97,8 @@
   # nix.package = pkgs.nix;
 
   # The user-friendly name for the system
-  networking.computerName = "HAL";
+  networking.computerName = "Starlight";
+  networking.hostName     = "HAL";
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.zsh.enable = true;  # default shell on catalina
