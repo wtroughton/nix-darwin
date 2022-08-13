@@ -54,7 +54,21 @@
     cleanup = "zap";
 
     casks = [
+      # read
+      "calibre"
+      "spotify"
+
+      # write
+      "screenflow"
+
+      # development
       "iterm2"
+      "postman"
+
+      # network
+      "mullvadvpn"
+
+      # messaging
       "slack"
       "zoom"
     ];
