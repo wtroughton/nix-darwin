@@ -37,6 +37,34 @@
 
   environment.variables.EDITOR = "nvim";
 
+  fonts.fontDir.enable = true;
+  fonts.fonts = with pkgs; [
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "Hack"
+        "Iosevka"
+      ];
+    })
+  ];
+
+  homebrew = {
+    enable = true;
+    autoUpdate = true;
+    cleanup = "zap";
+
+    casks = [
+      "iterm2"
+      "slack"
+      "zoom"
+    ];
+
+    taps = [
+      "homebrew/cask"
+      "homebrew/cask-versions"
+    ];
+  };
+
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
