@@ -5,8 +5,7 @@ let
     url = https://github.com/nix-community/nix-doom-emacs/archive/master.tar.gz;
     sha256 = "00kmqz3davv6myiamxwcl6bwmrird94s50kxgpk94hql5k21z3dr";
   }) {
-    doomPrivateDir = ./doom.d;  # Directory containing your config.el init.el
-                                # and packages.el files
+    doomPrivateDir = ./doom.d;  
   };
 
 in {

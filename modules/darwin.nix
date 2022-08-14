@@ -74,6 +74,10 @@
       "iterm2"
       "postman"
 
+      # browsers
+      "eloston-chromium"
+      "firefox"
+    
       # network
       "mullvadvpn"
 
