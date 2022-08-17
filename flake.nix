@@ -9,7 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, darwin, home-manager, nixpkgs }: {
+  outputs = { self, darwin, home-manager, ... }: {
     darwinConfigurations = {
       "Starlight" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";

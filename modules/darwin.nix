@@ -20,7 +20,7 @@
     };
 
     dock = {
-      autohide    = true;
+      autohide    = false;
       mru-spaces  = false;
       showhidden  = true;
     };
@@ -98,7 +98,11 @@
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
+  nix.package = pkgs.nix;
+  nix.extraOptions = ''
+    extra-platforms = aarch64-darwin x86_64-darwin
+    experimental-features = nix-command flakes
+  '';
 
   # Use Touch ID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
