@@ -1,1 +1,1 @@
-
+(setq org-directory "~/Org/")

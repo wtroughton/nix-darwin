@@ -9,12 +9,32 @@
     any-nix-shell
     htop
     pgcli
+    emacs
     nodejs-16_x
     terraform-ls
     tflint
     texlive.combined.scheme-full
     tmux
   ];
+
+  programs.fish = {
+    enable = true;
+
+    shellAliases = {
+      ls = "ls -F -h --color -v";
+      ll = "ls -l";
+      ".." = "cd ..";
+    };
+
+    interactiveShellInit = ''
+      any-nix-shell fish --info-right | source
+
+      set -x EDITOR "nvim"
+    '';
+  };
+
+  xdg.configFile."fish/conf.d/colorscheme.fish".source    = ../config/fish/tokyonight_night.fish;
+  xdg.configFile."fish/completions/terraform.fish".source = ../config/fish/completions/terraform.fish;
 
   programs.git = {
     enable = true;
@@ -33,6 +53,8 @@
     # Overrides the default color
     set-option -ga terminal-overrides ",xterm-256color:Tc"
   '';
+
+  home.file.".doom.d".source = ./doom.d;
 
   nixpkgs.config.allowUnfree = true;
 

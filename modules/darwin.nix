@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./homebrew.nix
+  ];
+
   system.defaults = {
     NSGlobalDomain = {
       AppleFontSmoothing       = 1;
@@ -57,41 +61,6 @@
     })
   ];
 
-  homebrew = {
-    enable = true;
-    autoUpdate = true;
-    cleanup = "zap";
-
-    casks = [
-      # read
-      "calibre"
-      "spotify"
-
-      # write
-      "screenflow"
-
-      # development
-      "iterm2"
-      "postman"
-
-      # browsers
-      "eloston-chromium"
-      "firefox"
-    
-      # network
-      "mullvadvpn"
-
-      # messaging
-      "slack"
-      "zoom"
-    ];
-
-    taps = [
-      "homebrew/cask"
-      "homebrew/cask-versions"
-    ];
-  };
-
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
@@ -112,8 +81,8 @@
   networking.hostName     = "HAL";
 
   # Create /etc/bashrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;  # default shell on catalina
-  # programs.fish.enable = true;
+  programs.zsh.enable  = true;  # default shell on catalina
+  programs.fish.enable = true;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
