@@ -9,13 +9,17 @@
     any-nix-shell
     htop
     pgcli
-    emacs
+    neovim-nightly
     nodejs-16_x
     terraform-ls
     tflint
     texlive.combined.scheme-full
     tmux
   ];
+
+  programs.emacs = {
+    enable = true;
+  };
 
   programs.fish = {
     enable = true;
@@ -53,8 +57,6 @@
     # Overrides the default color
     set-option -ga terminal-overrides ",xterm-256color:Tc"
   '';
-
-  home.file.".doom.d".source = ./doom.d;
 
   nixpkgs.config.allowUnfree = true;
 

@@ -44,11 +44,8 @@
 
   environment.systemPackages = with pkgs; [
     git
-    neovim
     vim
   ];
-
-  environment.variables.EDITOR = "nvim";
 
   fonts.fontDir.enable = true;
   fonts.fonts = with pkgs; [
