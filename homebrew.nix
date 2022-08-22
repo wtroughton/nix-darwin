@@ -12,6 +12,7 @@
       "calibre"
       "iterm2"
       "postman"
+      "emacs"
 
       "eloston-chromium"
       "firefox"
