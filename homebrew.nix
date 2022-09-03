@@ -10,9 +10,11 @@
 
     casks = [
       "calibre"
-      "iterm2"
-      "postman"
       "emacs"
+      "iterm2"
+      "affinity-publisher"
+      "omnigraffle"
+      "postman"
 
       "eloston-chromium"
       "firefox"
