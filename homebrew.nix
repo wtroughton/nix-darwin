@@ -12,6 +12,7 @@
       "calibre"
       "emacs"
       "iterm2"
+      "intellij-idea-ce"
       "affinity-publisher"
       "omnigraffle"
       "postman"
@@ -24,6 +25,7 @@
       "screenflow"
       "spotify"
       "slack"
+      "trezor-suite"
       "zoom"
     ];
 

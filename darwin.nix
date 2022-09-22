@@ -56,6 +56,7 @@
         "Iosevka"
       ];
     })
+    ibm-plex
   ];
 
   # Auto upgrade nix package and the daemon service.
