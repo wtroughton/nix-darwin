@@ -13,6 +13,7 @@
       "emacs"
       "iterm2"
       "intellij-idea-ce"
+      "affinity-photo"
       "affinity-publisher"
       "omnigraffle"
       "postman"
